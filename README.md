@@ -24,15 +24,15 @@ The first version is from 2020 and the second version is from 2022.
 The folder [dbpedia](https://github.com/kworkr/s3pg/tree/main/dbpedia) contains the files and scripts used to download
 each of the dataset.
 
-For convenience, we have made the datasets used for experiments available online. 
-You can download the DBpedia-2020 from [this](https://bitbucket.org/kashifrabbani/s3pg-dbpedia2020) link and DBpedia-2022 from [this](https://bitbucket.org/kashifrabbani/s3pg-dbpedia2022) link.
+<!-- For convenience, we have made the datasets used for experiments available online. 
+You can download the DBpedia-2020 from [this](https://bitbucket.org/kashifrabbani/s3pg-dbpedia2020) link and DBpedia-2022 from [this](https://bitbucket.org/kashifrabbani/s3pg-dbpedia2022) link. -->
 
 #### 2. Bio2RDF Clinical Trials Dataset
 
 We downloaded this dataset from the official link: https://download.bio2rdf.org/#/current/clinicaltrials/
 
-For convenience, we have made the datasets used for experiments available online.
-You can download the Bio2rdf dataset from [this](https://bitbucket.org/kashifrabbani/s3pg-bio2rdf-ct) link.
+<!-- For convenience, we have made the datasets used for experiments available online.
+You can download the Bio2rdf dataset from [this](https://bitbucket.org/kashifrabbani/s3pg-bio2rdf-ct) link. -->
 
 
 ### 2.2. SHACL shapes
