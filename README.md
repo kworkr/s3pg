@@ -25,23 +25,23 @@ The folder [dbpedia](https://github.com/kworkr/s3pg/tree/main/dbpedia) contains 
 each of the dataset.
 
 For convenience, we have made the datasets used for experiments available online. 
-You can download the DBpedia-2020 from [this](https://bitbucket.org/user/s3pg-dbpedia2020) link and DBpedia-2022 from [this](https://bitbucket.org/user/s3pg-dbpedia2022) link.
+You can download the DBpedia-2020 from [this](https://bitbucket.org/kashifrabbani/s3pg-dbpedia2020) link and DBpedia-2022 from [this](https://bitbucket.org/kashifrabbani/s3pg-dbpedia2022) link.
 
 #### 2. Bio2RDF Clinical Trials Dataset
 
 We downloaded this dataset from the official link: https://download.bio2rdf.org/#/current/clinicaltrials/
 
 For convenience, we have made the datasets used for experiments available online.
-You can download the Bio2rdf dataset from [this](https://bitbucket.org/user/s3pg-bio2rdf-ct) link.
+You can download the Bio2rdf dataset from [this](https://bitbucket.org/kashifrabbani/s3pg-bio2rdf-ct) link.
 
 
 ### 2.2. SHACL shapes
 
 Utilize QSE (Quality Shapes Extractor) to extract SHACL shapes from your datasets.
-[QSE](https://github.com/kworkr/qse) GitHub repository contains the codebase and instructions to extract SHACL shapes
+[QSE](https://github.com/dkw-aau/qse) GitHub repository contains the codebase and instructions to extract SHACL shapes
 from a given dataset.
 
-You can download the SHACL shapes for all of the above datasets using this link: [S3PG-SHACL-SHAPES](https://bitbucket.org/user/s3pg-shacl)
+You can download the SHACL shapes for all of the above datasets using this link: [S3PG-SHACL-SHAPES](https://bitbucket.org/kashifrabbani/s3pg-shacl)
 
 ## 3. Transforming KGs to PGs using S3PG
 
@@ -63,13 +63,13 @@ much easy as possible.
 #### 3.2. Configuration Parameters
 
 Please update the configuration file for each dataset available in
-the [config](https://github.com/kworkr/KG2PG/tree/master/config) directory, i.e., `dbpedia2020`, `dbpedia2022`,
+the [config](https://github.com/kworkr/s3pg/tree/master/config) directory, i.e., `dbpedia2020`, `dbpedia2022`,
 and `bio2rdf` to set the correct paths for your machine.
 
 #### 3.3. Shell Scripts
 
 Assuming that you are in the project's directory, you have updated the configuration file(s), and docker is installed on
-your machine, move into [scripts](https://github.com/kworkr/KG2PG/tree/master/scripts) directory using the
+your machine, move into [scripts](https://github.com/kworkr/s3pg/tree/master/scripts) directory using the
 command ``` cd scripts ``` and then execute one of the following shell scripts files:
 ``` ./run_bio2rdf.sh ``` ,
 ``` ./run_dbp2020.sh ``` ,
@@ -499,7 +499,7 @@ Use neo4j admin import to load the files into Neo4j.
 
 ## 5. Running Queries
 
-Queries are available in the [resources](https://github.com/kworkr/KG2PG/tree/master/src/main/resources) directory.
+Queries are available in the [resources](https://github.com/kworkr/s3pg/tree/master/src/main/resources) directory.
 
 Once you have loaded PG into Neo4j. Next step is to run queries, use the benchmark() method in the Main file to run the queries.
 
