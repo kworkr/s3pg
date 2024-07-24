@@ -1,0 +1,14 @@
+Index,Query
+Q0|CALL apoc.warmup.run();
+Q1|MATCH (node:ns1_Drug) WHERE node.ns0_title IS NOT NULL RETURN node.iri as entity, node.ns0_title as propValue
+Q2|MATCH (node:`ns1_Clinical-Result`) WHERE node.ns0_title IS NOT NULL RETURN node.iri as entity, node.ns0_title as propValue
+Q3|MATCH (node:ns1_Genetic) WHERE node.ns0_title IS NOT NULL RETURN node.iri as entity, node.ns0_title as propValue
+Q4|MATCH (node:`ns1_Clinical-Arm`)-[:ns1_description]->(tnode:LitNode) WHERE tnode.object_type = 'http://www.w3.org/2001/XMLSchema#string' RETURN node.iri as entity, tnode.object_value as description
+Q5|MATCH (node:`ns1_Event-Count`)-[:`ns1_frequency-threshold`]->(tnode:LitNode) WHERE tnode.object_type = 'http://www.w3.org/2001/XMLSchema#float' RETURN node.iri as entity, tnode.object_value as freq_threshold
+Q6|MATCH (node:ns1_Analysis)-[:`ns1_groups-desc`]->(tnode:LitNode) WHERE tnode.object_type = 'http://www.w3.org/2001/XMLSchema#string' RETURN node.iri as entity, tnode.object_value as groups_desc
+Q7|MATCH (node:`ns1_Clinical-Study`)-[:ns1_eligibility]->(tnode) RETURN node.iri as node_iri, tnode.iri as tnode_iri
+Q8|MATCH (node:ns1_Measurement)-[:`ns1_group-id`]->(tnode) RETURN node.iri as node_iri, tnode.iri as tnode_iri
+Q9|MATCH (node:ns1_Eligibility)-[:`ns1_inclusion-criteria`]->(tnode) RETURN node.iri as node_iri, tnode.iri as tnode_iri
+Q10|MATCH (node:ns1_Resource)-[:`ns1_group-id`]->(tnode) RETURN node.iri AS node_iri, COALESCE(tnode.object_value, tnode.iri) AS tnode_iri_or_id
+Q11|MATCH (node:ns1_Resource)-[:ns1_measure]->(tnode) RETURN node.iri AS node_iri, COALESCE(tnode.object_value, tnode.iri) AS tnode_iri_or_measure
+Q12|MATCH (node:ns1_Resource)-[:ns1_count]->(tnode) RETURN node.iri AS node_iri, COALESCE(tnode.object_value, tnode.iri) AS tnode_iri_or_count

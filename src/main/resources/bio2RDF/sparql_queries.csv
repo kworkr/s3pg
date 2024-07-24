@@ -1,0 +1,13 @@
+Index|Query
+Q1|SELECT  ?entity ?propValue   WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Drug> . ?entity <http://purl.org/dc/terms/title> ?propValue . }
+Q2|SELECT  ?entity ?propValue   WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Clinical-Result> . ?entity <http://purl.org/dc/terms/title> ?propValue . }
+Q3|SELECT  ?entity ?propValue   WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Genetic> . ?entity <http://purl.org/dc/terms/title> ?propValue . }
+Q4|SELECT  ?entity ?propValue   WHERE { ?entity a http://bio2rdf.org/clinicaltrials_vocabulary:Clinical-Arm . ?entity http://bio2rdf.org/clinicaltrials_vocabulary:description ?propValue . FILTER (DATATYPE(?propValue) = http://www.w3.org/2001/XMLSchema#string) }
+Q5|SELECT  ?entity ?propValue   WHERE { ?entity a  <http://bio2rdf.org/clinicaltrials_vocabulary:Event-Count> . ?entity <http://bio2rdf.org/clinicaltrials_vocabulary:frequency-threshold> ?propValue . FILTER (DATATYPE(?propValue) = <http://www.w3.org/2001/XMLSchema#float>) }
+Q6|SELECT  ?entity ?propValue   WHERE { ?entity a  <http://bio2rdf.org/clinicaltrials_vocabulary:Analysis> . ?entity <http://bio2rdf.org/clinicaltrials_vocabulary:groups-desc> ?propValue . FILTER (DATATYPE(?propValue) = <http://www.w3.org/2001/XMLSchema#string>) }
+Q7|SELECT distinct ?entity ?propertyValue WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Clinical-Study> ; <http://bio2rdf.org/clinicaltrials_vocabulary:eligibility> ?propertyValue . }
+Q8|SELECT distinct ?entity ?propertyValue WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Measurement> ; <http://bio2rdf.org/clinicaltrials_vocabulary:group-id> ?propertyValue . }
+Q9|SELECT distinct ?entity ?propertyValue WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Eligibility> ; <http://bio2rdf.org/clinicaltrials_vocabulary:inclusion-criteria> ?propertyValue . }
+Q10|SELECT distinct ?entity ?propertyValue WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Resource> ; <http://bio2rdf.org/clinicaltrials_vocabulary:group-id>?propertyValue . }
+Q11|SELECT distinct ?entity ?propertyValue WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Resource> ; <http://bio2rdf.org/clinicaltrials_vocabulary:measure>?propertyValue . }
+Q12|SELECT distinct ?entity ?propertyValue WHERE { ?entity a <http://bio2rdf.org/clinicaltrials_vocabulary:Resource> ; <http://bio2rdf.org/clinicaltrials_vocabulary:count> ?propertyValue . }

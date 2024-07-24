@@ -1,0 +1,14 @@
+Index,Query
+Q0|CALL apoc.warmup.run();
+Q1|MATCH (node:nss1_Drug) WHERE node.nss4_title is not null RETURN node.iri as entity, node.nss4_title as propValue;
+Q2|MATCH (node:`nss1_Clinical-Result`) WHERE node.nss4_title is not null RETURN node.iri as entity, node.nss4_title as propValue;
+Q3|MATCH (node:`nss1_Genetic`) WHERE node.nss4_title is not null RETURN node.iri as entity, node.nss4_title as propValue;
+Q4|MATCH (p:`nss1_Clinical-Arm`) WHERE p.nss1_description IS NOT NULL RETURN p.iri, p.nss1_description;
+Q5|MATCH (p:`nss1_Event-Count`) WHERE p.`nss1_frequency-threshold` IS NOT NULL AND toFloat(p.`nss1_frequency-threshold`) IS NOT NULL AND toString(toFloat(p.`nss1_frequency-threshold`)) = toString(p.`nss1_frequency-threshold`) RETURN p.iri, toFloat(p.`nss1_frequency-threshold`) AS frequency_threshold;
+Q6|MATCH (p:`nss1_Analysis`) WHERE p.`nss1_groups-desc` IS NOT NULL RETURN p.iri, p.`nss1_groups-desc`;
+Q7|MATCH (node:`nss1_Clinical-Study`)-[:nss1_eligibility]->(tnode) RETURN node.iri as node_iri, tnode.iri as tnode_iri;
+Q8|MATCH (node:`nss1_Measurement`)-[:`nss1_group-id`]->(tnode) RETURN node.iri as node_iri, tnode.iri as tnode_iri;
+Q9|MATCH (node:`nss1_Eligibility`)-[:`nss1_inclusion-criteria`]->(tnode) RETURN node.iri as node_iri, tnode.iri as tnode_iri;
+Q10|MATCH (node:nss1_Resource)-[:`nss1_group-id`]->(tnode) RETURN node.iri AS node_uri, tnode.iri AS tnode_name UNION ALL MATCH (node:nss1_Resource) UNWIND node.`nss1_group-id` AS tnode_name RETURN node.iri AS node_uri, tnode_name;
+Q11|MATCH (resource:`nss1_Resource`)-[:`nss1_measure`]->(group) RETURN resource.iri AS resource_uri, group.iri AS measure_value UNION ALL MATCH (resource:`nss1_Resource`) UNWIND resource.`nss1_measure` AS measure_value RETURN resource.iri AS resource_uri, measure_value;
+Q12|MATCH (resource:`nss1_Resource`)-[:`nss1_count`]->(count_node) RETURN resource.iri AS resource_uri, count_node.iri AS count_value UNION ALL MATCH (resource:`nss1_Resource`) UNWIND resource.`nss1_count` AS count_value RETURN resource.iri AS resource_uri, count_value;
