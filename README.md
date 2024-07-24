@@ -41,7 +41,7 @@ Utilize QSE (Quality Shapes Extractor) to extract SHACL shapes from your dataset
 [QSE](https://github.com/dkw-aau/qse) GitHub repository contains the codebase and instructions to extract SHACL shapes
 from a given dataset.
 
-You can download the SHACL shapes for all of the above datasets using this link: [S3PG-SHACL-SHAPES](https://bitbucket.org/kashifrabbani/s3pg-shacl)
+You can download the SHACL shapes for all of the above datasets, i.e., DBpedia (2020 & 2022) and Bio2RDF datasets using this link: [S3PG-SHACL-SHAPES](https://bitbucket.org/kworkr/s3pg_shacl/)
 
 ## 3. Transforming KGs to PGs using S3PG
 
@@ -500,6 +500,8 @@ Use neo4j admin import to load the files into Neo4j.
 ## 5. Running Queries
 
 Queries are available in the [resources](https://github.com/kworkr/s3pg/tree/master/src/main/resources) directory.
+There are two folders inside [resources](https://github.com/kworkr/s3pg/tree/master/src/main/resources) directory, one for queries over [DBpedia2022](https://github.com/kworkr/s3pg/tree/master/src/main/resources/dbpedia2022)  and one for [Bio2RDF](https://github.com/kworkr/s3pg/tree/master/src/main/resources/bio2RDF)  dataset. 
+
 
 Once you have loaded PG into Neo4j. Next step is to run queries, use the benchmark() method in the Main file to run the queries.
 
